@@ -1,84 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
-  <title>Population et artificialisation des sols</title>
-  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Population et artificialisation des sols</title>
 
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
 
-<body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="UGA" style="width:40px;" class="rounded-pill">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="maPage1.html">Page 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="maPage2.html">Page 2</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="maPage3.html" role="button" data-bs-toggle="dropdown">Page 3</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="maPage3.html#articles">Articles</a></li>
-              <li><a class="dropdown-item" href="maPage3.html#sections">Sections</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="maPage4.html">Page 4</a>
-          </li>
-        </ul>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="UGA" style="width:40px;" class="rounded-pill">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="maPage1.html">Page 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="maPage2.html">Page 2</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="maPage3.html" role="button" data-bs-toggle="dropdown">Page 3</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="maPage3.html#articles">Articles</a></li>
+                <li><a class="dropdown-item" href="maPage3.html#sections">Sections</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="maPage4.html">Page 4</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div >
-    <h1>Peut-on affirmer que l’artificialisation des sols en France est 4 fois plus rapide que l’augmentation de la
-      population ?</h1>
+    </nav>
+    <div>
+      <h1>Peut-on affirmer que l’artificialisation des sols en France est 4 fois plus rapide que l’augmentation de la
+        population ?</h1>
 
       <div id="map_test" class="map"></div>
 
-    <div class="row">
-      <!-- <div class="col-md" id="map"></div>
-      <div id="map1" style="width: 50%; height: 400px"></div> -->
+      <div class="row">
+        <!-- <div class="col-md" id="map"></div>
+        <div id="map1" style="width: 50%; height: 400px"></div> -->
 
-      <div class="col-md">
-        <p>L'artificialisation des sols est le processus par lequel les terres naturelles sont transformées en surfaces
-          anthropiques, telles que les routes, les immeubles, les parkings, les centres commerciaux, etc. Ce processus
-          peut se produire lors de l'expansion urbaine ou de la construction de nouveaux développements immobiliers.</p>
+        <div class="col-md">
+          <p>L'artificialisation des sols est le processus par lequel les terres naturelles sont transformées en surfaces
+            anthropiques, telles que les routes, les immeubles, les parkings, les centres commerciaux, etc. Ce processus
+            peut se produire lors de l'expansion urbaine ou de la construction de nouveaux développements immobiliers.</p>
+        </div>
       </div>
+
+
+      <div class="row">
+        <div class="col-md">
+          <section>
+            <h2>Evolution de la population de 1990 à 2012</h2>
+            <p> on constate une plus forte augmentation de la population a partir des année 2000
+            </p>
+          </section>
+        </div>
+        <div class="col-md"><img src="images/pop.jpg" alt="" width="100%"></div>
+        <!-- <embed src="images/pop.pdf#toolbar=0"><iframe src="images/pop.pdf" width="100%" height="500px"></iframe>-->
+      </div>
+
+    </div>
+    <div id="map" class="map">
+      <script type="module" src="../js/Test.js"></script>
     </div>
 
-    
-    <div class="row">
-      <div class="col-md">
-        <section>
-          <h2>Evolution de la population de 1990 à 2012</h2>
-          <p> on constate une plus forte augmentation de la population a partir des année 2000
-          </p>
-        </section>
-      </div>
-      <div class="col-md"><img src="images/pop.jpg" alt="" width="100%"></div>
-       <!-- <embed src="images/pop.pdf#toolbar=0"><iframe src="images/pop.pdf" width="100%" height="500px"></iframe>-->
-    </div>
 
-  </div>
 
-  <script type="module" src="../js/main.js"></script>
-  <script type="module" src="../js/carte.js"></script>
-  <script type="module" src="../js/map1.js"></script>
-</body>
+    <!--<script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/carte.js"></script>
+    <script type="module" src="../js/map1.js"></script>-->
+
+
+  </body>
 
 </html>
