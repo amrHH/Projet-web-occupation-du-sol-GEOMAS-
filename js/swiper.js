@@ -4,7 +4,7 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
-    mousewheel: true,
+    mousewheel: false,
     on: {
         init: function () {
             particlesJS('particles-js', {
