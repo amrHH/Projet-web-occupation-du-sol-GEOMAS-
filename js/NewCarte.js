@@ -24,11 +24,11 @@ var vectorSource = new ol.source.Vector({
 
 var vectorSource_c2 = new ol.source.Vector({
     format: new ol.format.GeoJSON(),
-    url: "./Cartes/Communes.geojson"
+    url: "./Cartes/carte_changement3_4326.geojson"
 });
 
 var colors = {
-    'autre': 'blue',
+    'autre': '#33fdbb84',
     'desartificialisation': 'red',
     'nouveau territoires artificial': 'pink',
     'territoires artificialisés': 'yellow'
@@ -60,15 +60,22 @@ var vectorLayer_c1 = new ol.layer.Vector({
 
 var vectorLayer_c2 = new ol.layer.Vector({
     source: vectorSource_c2,
-    style: function () {
+    style: function (feature) {
+        var chang_arti = feature.get('chang_arti');
+        var colors = this.colors
+        var defaultColor = 'gray'; // couleur par défaut pour les valeurs non répertoriées dans la liste des couleurs
+
+        // obtenir la couleur correspondante à la valeur de chang_arti
+        var color = colors[chang_arti] || defaultColor;
+
         // définir le style de la feature en fonction de la valeur de chang_arti
         return new ol.style.Style({
             fill: new ol.style.Fill({
-                color: 'white',
+                color: color
             }),
             stroke: new ol.style.Stroke({
                 color: 'black',
-                width: 1
+                width: 0.3
             })
         });
     }
@@ -157,4 +164,13 @@ map_1.on('click', function (evt) {
         popup_c1.setPosition(evt.coordinate);
     }
 });
+
+const layerSwitcher = new ol.control.LayerSwitcher({
+    show_labels:true,
+    tip_label:'couches',
+    groupSelectStyle: 'none', // Can be 'children' [default], 'group' or 'none'
+    activationMode:'mouseover',
+    startActive:true
+  });
+  map_2.addControl(layerSwitcher);
 
