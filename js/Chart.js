@@ -59,4 +59,33 @@ $.getJSON('./Cartes/Metro1.geojson', function(data) {
     }
   });
 });
+
+labels2 =['1990','2000','2006','2012','2018']
+populations=[6.668,7.001,7.357,7.695,7.992]
+var ctx2 = document.getElementById('myChart_2').getContext('2d');
+var myChart2 = new Chart(ctx2, {
+  type: 'bar',
+  data: {
+    labels: labels2,
+    datasets: [{
+      label: 'Changements',
+      data: populations,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        ticks: {
+          beginAtZero: true,
+          callback: function(value) {
+            return value + 'M';
+          }
+        }
+      }
+    }
+  }
+});
   
