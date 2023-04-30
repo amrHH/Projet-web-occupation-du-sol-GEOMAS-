@@ -13,12 +13,23 @@
     /* ajoute de l'ombre */
 }
 
+#thirdpage{
+    background-image: url("../images/zck_-TtKtYYrdBII-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    display: block;
+    position: sticky;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    /* ajoute de l'ombre */
+}
 
 #titrefirstpage {
     font-size: 60px;
     color: white;
     text-align: center;
     text-decoration: underline;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 #parafirstpage {
@@ -56,6 +67,11 @@ body {
 }
 
 #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#particles-js-2 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -112,3 +128,18 @@ canvas {
     height: 400px;
     margin: auto;
 }
+
+
+.swiper-button-prev {
+    left: 98% !important;
+    top: 40% !important;
+    transform: rotate(90deg);
+    transform-origin: left center;
+  }
+  .swiper-button-next {
+    left: 98% !important;
+    bottom: 49% !important;
+    transform: rotate(90deg);
+    transform-origin: left center;
+
+  }
