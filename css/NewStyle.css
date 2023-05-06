@@ -58,6 +58,7 @@
     height: 300px;
 }
 
+
 body {
     margin: 0;
 }
@@ -124,7 +125,7 @@ body {
 
 
 canvas {
-    width: 50%;
+    width: 80%;
     height: 400px;
     margin: auto;
 }

@@ -68,7 +68,7 @@ var myChart2 = new Chart(ctx2, {
   data: {
     labels: labels2,
     datasets: [{
-      label: 'Changements',
+      label: 'Population en Auvergne-Rhône-Alpes',
       data: populations,
       backgroundColor: 'rgba(54, 162, 235, 0.2)',
       borderColor: 'rgba(54, 162, 235, 1)',
@@ -80,6 +80,7 @@ var myChart2 = new Chart(ctx2, {
       y: {
         ticks: {
           beginAtZero: true,
+          suggestedMin: 4.0,
           callback: function(value) {
             return value + 'M';
           }
