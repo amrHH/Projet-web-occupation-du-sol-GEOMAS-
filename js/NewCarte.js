@@ -7,14 +7,18 @@ var esriLayer = new ol.layer.Tile({
         url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         tileSize: 256,
         crossOrigin: 'anonymous'
-    })
+    }),
+    title: 'Fond de carte'
+
 });
 var esriLayer_c2 = new ol.layer.Tile({
     source: new ol.source.XYZ({
         url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         tileSize: 256,
         crossOrigin: 'anonymous'
-    })
+    }),
+    title: 'Fond de carte'
+
 });
 // Crée une source de vecteur pour les données geojson locales
 var vectorSource = new ol.source.Vector({
@@ -37,6 +41,7 @@ var colors = {
 
 var vectorLayer_c1 = new ol.layer.Vector({
     source: vectorSource,
+    title: 'Carte de changement',
     style: function (feature) {
         var chang_arti = feature.get('chang_arti');
         var colors = this.colors
@@ -60,6 +65,7 @@ var vectorLayer_c1 = new ol.layer.Vector({
 
 var vectorLayer_c2 = new ol.layer.Vector({
     source: vectorSource_c2,
+    title: 'Carte de changement',
     style: function (feature) {
         var chang_arti = feature.get('chang_arti');
         var colors = this.colors
@@ -123,6 +129,7 @@ vectorSource_c2.once('change', function () {
 // créer une couche de surbrillance pour mettre en évidence la fonctionnalité sélectionnée
 var highlightLayer_c1 = new ol.layer.Vector({
     source: new ol.source.Vector(),
+    title: 'Les Popups en couleur',
     style: new ol.style.Style({
         stroke: new ol.style.Stroke({
             color: 'rgba(255, 0, 0, 1)',
@@ -165,12 +172,50 @@ map_1.on('click', function (evt) {
     }
 });
 
+
+var legendControl = new ol.control.Control({
+    element: document.getElementById('legend')
+});
+
+map_1.addControl(legendControl);
+var legendContent = '<div class="legend-item"><span class="legend-color" style="background-color: Yellow;"></span> territoires artificialisés</div>' +
+    '<div class="legend-item"><span class="legend-color" style="background-color: green;"></span> autre</div>'+
+    '<div class="legend-item"><span class="legend-color" style="background-color: red;"></span> desartificialisation</div>'+
+    '<div class="legend-item"><span class="legend-color" style="background-color: pink;"></span> nouveau territoires artificial</div>';
+
+legendControl.element.innerHTML = legendContent;
+
+
+var legendControl2 = new ol.control.Control({
+    element: document.getElementById('legend2')
+});
+map_2.addControl(legendControl2);
+legendControl2.element.innerHTML = legendContent;
+
+
 const layerSwitcher = new ol.control.LayerSwitcher({
-    show_labels:true,
-    tip_label:'couches',
-    groupSelectStyle: 'none', // Can be 'children' [default], 'group' or 'none'
-    activationMode:'mouseover',
-    startActive:true
-  });
-  map_2.addControl(layerSwitcher);
+    tipLabel: 'Couches',
+    groupSelectStyle: 'none',
+    showLabels: true,
+    activationMode: 'mouseover',
+    startActive: true,
+    reordering: false,
+    cssClass: 'custom-layer-switcher',
+});
+
+
+const layerSwitcher2 = new ol.control.LayerSwitcher({
+    tipLabel: 'Couches',
+    groupSelectStyle: 'none',
+    showLabels: true,
+    activationMode: 'mouseover',
+    startActive: true,
+    reordering: false,
+    cssClass: 'custom-layer-switcher',
+});
+map_1.addControl(layerSwitcher);
+map_2.addControl(layerSwitcher2);
+
+
+
 

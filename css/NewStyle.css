@@ -47,6 +47,14 @@
     max-width: 1100px;
     margin: 0 auto;
 }
+#parathirdpage {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 
 #carte2 {
     width: 100%;
@@ -144,3 +152,31 @@ canvas {
     transform-origin: left center;
 
   }
+
+
+#legend {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: transparent;
+    color: white;
+}
+#legend2 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: transparent;
+    color: white;
+}
+
+.legend-item {
+    margin-bottom: 5px;
+    font-size: 12px
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 5px;
+}

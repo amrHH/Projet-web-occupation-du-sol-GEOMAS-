@@ -47,15 +47,22 @@ $.getJSON('./Cartes/Metro1.geojson', function(data) {
     },
     options: {
       scales: {
+        x:{
+          ticks:{
+            color: 'white'
+          }
+        },
         y: {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
               return value + '%';
-            }
+            },
+            color: 'white'
           }
         }
-      }
+      },
+      color: 'white'
     }
   });
 });
@@ -77,16 +84,23 @@ var myChart2 = new Chart(ctx2, {
   },
   options: {
     scales: {
+      x:{
+        ticks:{
+          color: 'white'
+        }
+      },
       y: {
         ticks: {
           beginAtZero: true,
           suggestedMin: 4.0,
           callback: function(value) {
             return value + 'M';
-          }
+          },
+          color: 'white'
         }
       }
-    }
+    },
+    color: 'white'
   }
 });
   
