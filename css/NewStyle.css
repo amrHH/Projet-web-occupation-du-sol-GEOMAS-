@@ -13,7 +13,7 @@
     /* ajoute de l'ombre */
 }
 
-#thirdpage{
+#thirdpage {
     background-image: url("../images/zck_-TtKtYYrdBII-unsplash.jpg");
     background-size: cover;
     background-position: center;
@@ -22,6 +22,17 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     /* ajoute de l'ombre */
 }
+
+#fourthpage {
+    background-image: url("../images/IUGA.jpg");
+    background-size: cover;
+    background-position: center;
+    display: block;
+    position: sticky;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    /* ajoute de l'ombre */
+}
+
 
 #titrefirstpage {
     font-size: 60px;
@@ -47,6 +58,7 @@
     max-width: 1100px;
     margin: 0 auto;
 }
+
 #parathirdpage {
     font-size: 20px;
     color: white;
@@ -80,6 +92,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 #particles-js-2 {
     position: absolute;
     width: 100%;
@@ -144,14 +157,15 @@ canvas {
     top: 40% !important;
     transform: rotate(90deg);
     transform-origin: left center;
-  }
-  .swiper-button-next {
+}
+
+.swiper-button-next {
     left: 98% !important;
     bottom: 49% !important;
     transform: rotate(90deg);
     transform-origin: left center;
 
-  }
+}
 
 
 #legend {
@@ -161,6 +175,7 @@ canvas {
     background-color: transparent;
     color: white;
 }
+
 #legend2 {
     position: absolute;
     bottom: 10px;
@@ -180,3 +195,97 @@ canvas {
     height: 10px;
     margin-right: 5px;
 }
+
+
+.round-flip-box {
+    perspective: 1000px;
+    width: 450px;
+    height: 450px;
+    margin: auto;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.9s;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-box-front {
+    transform: rotateY(0deg);
+}
+
+.flip-box-back {
+    transform: rotateY(180deg);
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.flip-box-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-linkedin,
+.image-github {
+  max-width: 50%;
+  height: auto; 
+  margin: 50px; 
+}
+.image-linkedin:hover,
+.image-github:hover {
+  background-color: #f2f2f2;
+}
+
+#parafourthpage {
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Ink Free"; 
+    color: white;
+    font-size: 30px; 
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
