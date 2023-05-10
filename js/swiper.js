@@ -1,3 +1,4 @@
+// Mise en place des propriétés des swipers
 var swiper = new Swiper(".mySwiper", {
     direction: "vertical",
 
@@ -9,6 +10,7 @@ var swiper = new Swiper(".mySwiper", {
     touchRatio: 0,
     keyboard: true,
     on: {
+        //Mise en place des propriétés des particules qu'on voit bouger en fond d'ecran
         init: function () {
             particlesJS('particles-js', {
                 "particles": {

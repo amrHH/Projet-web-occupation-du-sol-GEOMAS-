@@ -1,7 +1,4 @@
-/*var osmLayer = new ol.layer.Tile({
-    source: new ol.source.OSM()
-});*/
-
+// Crée le fond de carte esri
 var esriLayer = new ol.layer.Tile({
     source: new ol.source.XYZ({
         url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
@@ -11,6 +8,7 @@ var esriLayer = new ol.layer.Tile({
     title: 'Fond de carte'
 
 });
+// Crée le fond de carte esri pour la deuxieme carte
 var esriLayer_c2 = new ol.layer.Tile({
     source: new ol.source.XYZ({
         url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
@@ -31,6 +29,7 @@ var vectorSource_c2 = new ol.source.Vector({
     url: "./Cartes/carte_changement3_4326.geojson"
 });
 
+//Définir les couleurs de la légende
 var colors = {
     'autre': '#33fdbb84',
     'desartificialisation': 'red',
@@ -38,7 +37,7 @@ var colors = {
     'territoires artificialisés': 'yellow'
 };
 
-
+// Mise en place de la couche vecteur
 var vectorLayer_c1 = new ol.layer.Vector({
     source: vectorSource,
     title: 'Carte de changement',
@@ -63,6 +62,7 @@ var vectorLayer_c1 = new ol.layer.Vector({
     }
 });
 
+// Mise en place de la couche vecteur
 var vectorLayer_c2 = new ol.layer.Vector({
     source: vectorSource_c2,
     title: 'Carte de changement',
@@ -173,6 +173,7 @@ map_1.on('click', function (evt) {
 });
 
 
+// Ajouter la légende
 var legendControl = new ol.control.Control({
     element: document.getElementById('legend')
 });
@@ -184,8 +185,6 @@ var legendContent = '<div class="legend-item"><span class="legend-color" style="
     '<div class="legend-item"><span class="legend-color" style="background-color: pink;"></span> nouveau territoires artificial</div>';
 
 legendControl.element.innerHTML = legendContent;
-
-
 var legendControl2 = new ol.control.Control({
     element: document.getElementById('legend2')
 });
@@ -193,6 +192,7 @@ map_2.addControl(legendControl2);
 legendControl2.element.innerHTML = legendContent;
 
 
+// Ajouter le bouton qui permet de cacher les couches
 const layerSwitcher = new ol.control.LayerSwitcher({
     tipLabel: 'Couches',
     groupSelectStyle: 'none',
@@ -202,8 +202,6 @@ const layerSwitcher = new ol.control.LayerSwitcher({
     reordering: false,
     cssClass: 'custom-layer-switcher',
 });
-
-
 const layerSwitcher2 = new ol.control.LayerSwitcher({
     tipLabel: 'Couches',
     groupSelectStyle: 'none',
@@ -215,7 +213,3 @@ const layerSwitcher2 = new ol.control.LayerSwitcher({
 });
 map_1.addControl(layerSwitcher);
 map_2.addControl(layerSwitcher2);
-
-
-
-
